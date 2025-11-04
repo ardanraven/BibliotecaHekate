@@ -5,7 +5,7 @@ function loadLibrary() {
     const scriptUrlPrincipal = "https://script.google.com/macros/s/AKfycbybTl332TVcvMsBCBEd7hGi-b4d3hordlljEvHvSXK3-RBGyfnM3LqxiajeLKjkt5Ye/exec"; // URL DA PASTA PRINCIPAL
 
     // Caminho para sua capa padrão.
-    const fallbackCapa = 'capa-padrao.png'; // Garanta que este arquivo esteja na pasta do site.
+    const fallbackCapa = 'capa-padrao.png'; // A capa Hekatina
     
     let pdfData = [];
 
@@ -54,7 +54,8 @@ function loadLibrary() {
             
             pdfItem.innerHTML = `
                 <div class="pdf-cover-container">
-                    <img src="${file.thumbnail || fallbackCapa}" 
+                    
+                    <img src="${fallbackCapa}" 
                          alt="Capa de ${file.name}" 
                          class="pdf-cover-image" 
                          onerror="this.onerror=null;this.src='${fallbackCapa}';">
