@@ -63,7 +63,7 @@ h1, h2, h3 {
 .main-nav {
     margin-bottom: 30px;
     display: flex; /* Para os botões ficarem lado a lado */
-    gap: 15px; /* Espaço entre os botões */
+    gap: 12px; /* <-- MUDANÇA: Era 15px */
     flex-wrap: wrap; /* Quebra linha em telas pequenas */
     justify-content: center;
 }
@@ -72,9 +72,9 @@ h1, h2, h3 {
     background: transparent; /* Fundo transparente */
     color: var(--primary-light); /* Cor do texto e SVG */
     border: 2px solid var(--primary-light); /* Borda lilás */
-    padding: 10px 24px; /* Padding ajustado */
+    padding: 10px 20px; /* <-- MUDANÇA: Era 10px 24px */
     border-radius: 30px;
-    font-size: 1.0em; /* Fonte ligeiramente menor para caber 4 */
+    font-size: 0.95em; /* <-- MUDANÇA: Era 1.0em */
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -345,6 +345,16 @@ button, a, input[type="text"] {
 }
 
 /* Responsividade */
+@media (max-width: 900px) { /* Ponto de quebra para os 5 botões */
+    .main-nav {
+        gap: 10px;
+    }
+    .nav-button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}
+
 @media (max-width: 768px) {
     .main-header h1 {
         font-size: 2.5em;
@@ -403,7 +413,7 @@ button, a, input[type="text"] {
     }
 }
 
-@media (max-width: 520px) { /* Ponto de quebra extra para botões */
+@media (max-width: 600px) { /* Ponto de quebra mais cedo para os botões */
     .main-header {
         padding: 30px 15px 15px;
     }
@@ -417,6 +427,8 @@ button, a, input[type="text"] {
     }
     .nav-button {
         width: 80%; /* Faz os botões ocuparem mais largura */
+        font-size: 1em; /* Retorna ao tamanho normal */
+        padding: 10px 24px;
     }
     .search-container {
         width: 100%;
